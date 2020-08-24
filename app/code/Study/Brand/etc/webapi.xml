@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="POST" url="/V1/study-brand/brand">
+        <service class="Study\Brand\Api\BrandRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Study_Brand::Brand_save"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/study-brand/brand/search">
+        <service class="Study\Brand\Api\BrandRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Study_Brand::Brand_view"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/study-brand/brand/:brandId">
+        <service class="Study\Brand\Api\BrandRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="Study_Brand::Brand_view"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/study-brand/brand/:brandId">
+        <service class="Study\Brand\Api\BrandRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Study_Brand::Brand_update"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/study-brand/brand/:brandId">
+        <service class="Study\Brand\Api\BrandRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Study_Brand::Brand_delete"/>
+        </resources>
+    </route>
+</routes>
